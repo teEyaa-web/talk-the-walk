@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#dcecff">
+    <meta name="description" content="Talk The Walk — a little game made with love, just for you two.">
+
+    <title>Talk The Walk ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         HALAMAN PEMBUKA
+    =========================================== -->
+
+    <main class="container" id="homePage">
+
+        <p class="subtitle">JUST YOU & ME EDITION ♡</p>
+
+        <h1>Talk The Walk</h1>
+
+        <p class="description">
+            roll the dice, take a step, share a story.
+        </p>
+
+        <div class="characters">
+
+            <div class="character">🎀</div>
+
+            <div class="heart">♡</div>
+
+            <div class="character">🧸</div>
+
+        </div>
+
+        <button id="startButton" type="button">
+            Start Our Game ♡
+        </button>
+
+        <p class="footer">
+            a little game made with love ♡
+        </p>
+
+    </main>
+
+
+    <!-- ==========================================
+         HALAMAN INPUT NAMA
+    =========================================== -->
+
+    <section class="setup-container" id="setupPage" hidden>
+
+        <p class="subtitle">LET'S GET TO KNOW YOU ♡</p>
+
+        <h1>Who's Playing?</h1>
+
+        <p class="description">
+            enter your names before we begin!
+        </p>
+
+        <div class="name-inputs">
+
+            <!-- PLAYER 1 -->
+
+            <div class="input-group">
+
+                <img
+                    src="assets/pawns/pawn-girl.png"
+                    alt="Girl pawn"
+                    class="setup-pawn"
+                >
+
+                <label for="name1">Player 1</label>
+
+                <input
+                    type="text"
+                    id="name1"
+                    placeholder="Your name..."
+                    value="You"
+                    maxlength="15"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- PLAYER 2 -->
+
+            <div class="input-group">
+
+                <img
+                    src="assets/pawns/pawn-boy.png"
+                    alt="Boy pawn"
+                    class="setup-pawn"
+                >
+
+                <label for="name2">Player 2</label>
+
+                <input
+                    type="text"
+                    id="name2"
+                    placeholder="Bendot's name..."
+                    value="Bendot"
+                    maxlength="15"
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </div>
+
+        <button id="playButton" type="button">
+            Let's Play ♡
+        </button>
+
+        <p class="footer">
+            just the two of you ♡
+        </p>
+
+    </section>
+
+
+    <!-- ==========================================
+         HALAMAN PILIH KATEGORI
+    =========================================== -->
+
+    <section class="container" id="categoryPage" hidden>
+
+        <p class="subtitle">LET'S START OUR JOURNEY ♡</p>
+
+        <h1>Choose Your Topic</h1>
+
+        <p class="description">
+            pick a category and let's share some stories!
+        </p>
+
+        <div class="category-list">
+
+            <button class="category-button" data-category="about" type="button">
+                ♡ About Us
+            </button>
+
+            <button class="category-button" data-category="memories" type="button">
+                ♡ Past Memories
+            </button>
+
+            <button class="category-button" data-category="thoughts" type="button">
+                ♡ Deep Thoughts
+            </button>
+
+            <button class="category-button" data-category="love" type="button">
+                ♡ Love & Relationship
+            </button>
+
+            <button class="category-button" data-category="friendship" type="button">
+                ♡ Friendship
+            </button>
+
+            <button class="category-button" data-category="future" type="button">
+                ♡ Dreams & Future
+            </button>
+
+            <button class="category-button" data-category="random" type="button">
+                ♡ Random
+            </button>
+
+        </div>
+
+        <p class="footer">
+            every question brings us closer ♡
+        </p>
+
+    </section>
+
+
+    <!-- ==========================================
+         HALAMAN PAPAN PERMAINAN
+    =========================================== -->
+
+    <section class="container" id="gamePage" hidden>
+
+        <p class="subtitle">JUST YOU & ME ♡</p>
+
+        <h1>Our Little Journey</h1>
+
+        <p class="description">
+            roll the dice and see where your story takes you!
+        </p>
+
+        <div class="game-board">
+
+            <!-- BARIS ATAS -->
+
+            <div class="board-tile" id="tile0">START ♡</div>
+
+            <div class="board-tile" id="tile1">About Us</div>
+
+            <div class="board-tile" id="tile2">Random</div>
+
+            <div class="board-tile" id="tile3">Deep Thoughts</div>
+
+            <div class="board-tile" id="tile4">Love & Relationship</div>
+
+
+            <!-- SISI KANAN -->
+
+            <div class="board-tile" id="tile15">Dreams & Future</div>
+
+
+            <!-- BAGIAN TENGAH PAPAN -->
+
+            <div class="board-center">
+
+                <h2>Talk The Walk</h2>
+
+                <p id="boardTurnText">
+                    It's your turn! ♡
+                </p>
+
+                <div class="dice" id="diceDisplay">🎲</div>
+
+                <button id="rollButton" type="button">
+                    Roll the Dice ♡
+                </button>
+
+                <p id="diceResult">
+                    let's begin our journey!
+                </p>
+
+                <div class="player-info">
+
+                    <p id="player1Info">Player 1: 0</p>
+
+                    <p id="player2Info">Player 2: 0</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SISI KIRI -->
+
+            <div class="board-tile" id="tile5">Past Memories</div>
+
+            <div class="board-tile" id="tile14">Friendship</div>
+
+            <div class="board-tile" id="tile6">Love & Relationship</div>
+
+            <div class="board-tile" id="tile13">Random</div>
+
+            <div class="board-tile" id="tile7">Deep Thoughts</div>
+
+            <div class="board-tile" id="tile12">About Us</div>
+
+
+            <!-- BARIS BAWAH -->
+
+            <div class="board-tile" id="tile11">Dreams & Future</div>
+
+            <div class="board-tile" id="tile10">Past Memories</div>
+
+            <div class="board-tile" id="tile9">Friendship</div>
+
+            <div class="board-tile" id="tile8">Love & Relationship</div>
+
+        </div>
+
+        <p class="footer">
+            every step holds a little story ♡
+        </p>
+
+    </section>
+
+
+    <!-- ==========================================
+         HALAMAN PERTANYAAN
+    =========================================== -->
+
+    <section class="container" id="questionPage" hidden>
+
+        <p class="subtitle">A LITTLE QUESTION FOR YOU ♡</p>
+
+        <h1 id="questionCategory">About Us</h1>
+
+        <div class="question-card">
+
+            <p id="questionText">
+                your question will appear here ♡
+            </p>
+
+        </div>
+
+        <p id="turnText" class="description">
+            it's your turn!
+        </p>
+
+        <button id="nextQuestionButton" type="button">
+            Next Question ♡
+        </button>
+
+        <br>
+
+        <button id="backButton" type="button">
+            Back to Categories
+        </button>
+
+        <p class="footer">
+            take your time, enjoy the moment ♡
+        </p>
+
+    </section>
+
+
+    <!-- ==========================================
+         HALAMAN AKHIR PERMAINAN
+    =========================================== -->
+
+    <section class="container" id="endPage" hidden>
+
+        <p class="subtitle">A LITTLE MEMORY FOR US ♡</p>
+
+        <h1>We Made It!</h1>
+
+        <p class="description">
+            every step, every question, every little story...
+        </p>
+
+
+        <!-- PION KALIAN -->
+
+        <div class="characters end-characters">
+
+            <img
+                src="assets/pawns/pawn-girl.png"
+                alt="Girl pawn"
+                class="end-pawn"
+            >
+
+            <div class="heart">♡</div>
+
+            <img
+                src="assets/pawns/pawn-boy.png"
+                alt="Boy pawn"
+                class="end-pawn"
+            >
+
+        </div>
+
+
+        <!-- NAMA PEMAIN -->
+
+        <h2 class="end-names">
+
+            <span id="endPlayer1Name">Player 1</span>
+
+            <span class="heart">♡</span>
+
+            <span id="endPlayer2Name">Player 2</span>
+
+        </h2>
+
+
+        <!-- PESAN PENUTUP -->
+
+        <div class="question-card end-message-card">
+
+            <p id="endMessage">
+                thank you for sharing your little stories with each other.
+                may there always be more memories to make together. ♡
+            </p>
+
+        </div>
+
+        <p class="description">
+            this is not the end of our story...
+        </p>
+
+        <button id="playAgainButton" type="button">
+            Play Again ♡
+        </button>
+
+        <p class="footer">
+            made with love, just for us ♡
+        </p>
+
+    </section>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
