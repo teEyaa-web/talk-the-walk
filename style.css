@@ -26,13 +26,10 @@ body {
     justify-content: center;
     align-items: center;
     padding: 30px 15px;
-
     font-family: 'Quicksand', sans-serif;
-
     background:
         radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
         linear-gradient(135deg, #dcecff, #e7e3ff, #fff0f5);
-
     color: #586b91;
     overflow-x: hidden;
 }
@@ -46,15 +43,11 @@ body {
     width: 90%;
     max-width: 650px;
     padding: 55px 30px;
-
     text-align: center;
-
     background: rgba(255, 255, 255, 0.76);
     border: 3px solid white;
     border-radius: 35px;
-
     box-shadow: 0 15px 40px rgba(105, 145, 195, 0.16);
-
     backdrop-filter: blur(8px);
 }
 
@@ -100,18 +93,13 @@ h1 {
 .character {
     width: 110px;
     height: 110px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-size: 65px;
-
     border-radius: 30px;
     background: #ffffff;
-
     box-shadow: 0 8px 0 #d7e5f7;
-
     animation: float 2s ease-in-out infinite alternate;
 }
 
@@ -132,21 +120,15 @@ h1 {
 button {
     margin-top: 10px;
     padding: 17px 38px;
-
     border: none;
     border-radius: 30px;
-
     background: #8db5e8;
     color: white;
-
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     font-weight: 700;
-
     cursor: pointer;
-
     box-shadow: 0 6px 0 #7098ce;
-
     transition:
         transform 0.25s ease,
         background 0.25s ease,
@@ -182,10 +164,8 @@ button:disabled {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 25px;
-
     width: 100%;
     max-width: 480px;
-
     margin: 35px auto;
     text-align: center;
 }
@@ -194,18 +174,13 @@ button:disabled {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     gap: 10px;
-
     min-width: 0;
     padding: 18px 12px 20px;
-
     background: linear-gradient(145deg, #ffffff, #f4f8ff);
     border: 2px solid white;
     border-radius: 25px;
-
     box-shadow: 0 6px 0 #e0eafa;
-
     transition: transform 0.25s ease;
 }
 
@@ -221,17 +196,12 @@ button:disabled {
 
 .setup-pawn {
     display: block;
-
     width: 135px;
     height: 155px;
-
     object-fit: contain;
     object-position: center;
-
     margin: 0 auto 5px;
-
     filter: drop-shadow(0 5px 5px rgba(90, 110, 150, 0.13));
-
     animation: pawnFloat 2.5s ease-in-out infinite;
 }
 
@@ -253,21 +223,15 @@ button:disabled {
 .input-group input {
     width: 100%;
     min-width: 0;
-
     padding: 14px 12px;
-
     border: 2px solid #dce8f8;
     border-radius: 18px;
-
     outline: none;
-
     background: #ffffff;
     color: #586b91;
-
     font-family: 'Quicksand', sans-serif;
     font-size: 14px;
     text-align: center;
-
     transition: 0.3s;
 }
 
@@ -288,7 +252,6 @@ button:disabled {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-
     max-width: 480px;
     margin: 40px auto 25px;
 }
@@ -296,22 +259,16 @@ button:disabled {
 .category-button {
     width: 100%;
     min-height: 75px;
-
     margin: 0;
     padding: 15px;
-
     border: 2px solid #ffffff;
     border-radius: 22px;
-
     background: #e3efff;
     color: #718fc4;
-
     font-family: 'Quicksand', sans-serif;
     font-size: 14px;
     font-weight: 700;
-
     box-shadow: 0 5px 0 #c9dcf5;
-
     transition: 0.3s;
 }
 
@@ -349,43 +306,33 @@ button:disabled {
     width: 100%;
     max-width: 500px;
     min-height: 160px;
-
     margin: 30px auto;
     padding: 35px 28px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     position: relative;
-
     background: linear-gradient(135deg, #ffffff, #eaf2ff);
     border: 3px solid white;
     border-radius: 28px;
-
     box-shadow: 0 8px 0 #cbdcf2;
-
     animation: questionCardIn 0.55s ease-out both;
 }
 
 .question-card::before {
     content: "♡";
-
     position: absolute;
     top: 12px;
     right: 18px;
-
     color: #e99cbd;
     font-size: 24px;
 }
 
 #questionText {
     color: #536b91;
-
     font-family: 'Quicksand', sans-serif;
     font-size: 19px;
     font-weight: 700;
-
     line-height: 1.8;
     text-align: center;
 }
@@ -404,13 +351,10 @@ button:disabled {
 
 #backButton {
     display: block;
-
     margin: 15px auto 0;
     padding: 13px 28px;
-
     background: #e5eafa;
     color: #7185ad;
-
     box-shadow: 0 5px 0 #cbd6ed;
     font-size: 14px;
 }
@@ -434,21 +378,15 @@ button:disabled {
 
 .game-board {
     display: grid;
-
     grid-template-columns: repeat(5, minmax(0, 1fr));
     grid-template-rows: repeat(5, minmax(90px, auto));
-
     gap: 8px;
-
     margin: 35px auto;
     max-width: 850px;
     padding: 12px;
-
     background: linear-gradient(145deg, #e5efff, #dce9fa);
-
     border: 4px solid white;
     border-radius: 28px;
-
     box-shadow: 0 12px 25px rgba(105, 145, 195, 0.18);
 }
 
@@ -461,27 +399,19 @@ button:disabled {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     position: relative;
-
     min-width: 0;
     min-height: 0;
     padding: 8px;
-
     border: 2px solid white;
     border-radius: 17px;
-
     background: #e7f1ff;
     color: #7185ad;
-
     font-size: 12px;
     font-weight: 700;
-
     text-align: center;
     line-height: 1.4;
-
     box-shadow: 0 4px 0 #c5d9f2;
-
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
@@ -497,29 +427,21 @@ button:disabled {
 
 .pawn-board-image {
     display: inline-block;
-
     width: 38px;
     height: 48px;
-
     object-fit: contain;
     object-position: center;
-
     vertical-align: middle;
-
     filter: drop-shadow(0 2px 2px rgba(70, 90, 130, 0.15));
-
     animation: pawnAppear 0.3s ease-out;
 }
 
 .pawn-info-image {
     display: inline-block;
-
     width: 28px;
     height: 34px;
-
     object-fit: contain;
     object-position: center;
-
     vertical-align: middle;
     margin-right: 3px;
 }
@@ -529,7 +451,6 @@ button:disabled {
 ========================================== */
 
 /* START */
-
 #tile0 {
     background: #A9C9F5;
     color: #49658B;
@@ -537,7 +458,6 @@ button:disabled {
 }
 
 /* ABOUT US */
-
 #tile1,
 #tile12 {
     background: #DCEBFF;
@@ -546,16 +466,20 @@ button:disabled {
 }
 
 /* RANDOM */
-
-#tile2,
-#tile13 {
+#tile2 {
     background: #FFF0DC;
     color: #A98455;
     box-shadow: 0 4px 0 #EBD8B9;
 }
 
-/* DEEP THOUGHTS */
+/* DARE */
+#tile13 {
+    background: #C5D9F5;
+    color: #526F9B;
+    box-shadow: 0 4px 0 #A9C3E8;
+}
 
+/* DEEP THOUGHTS */
 #tile3,
 #tile7 {
     background: #E9E3FF;
@@ -564,7 +488,6 @@ button:disabled {
 }
 
 /* LOVE & RELATIONSHIP */
-
 #tile4,
 #tile6,
 #tile8 {
@@ -574,7 +497,6 @@ button:disabled {
 }
 
 /* PAST MEMORIES */
-
 #tile5,
 #tile10 {
     background: #D9F0F5;
@@ -583,7 +505,6 @@ button:disabled {
 }
 
 /* FRIENDSHIP */
-
 #tile9,
 #tile14 {
     background: #E1F2E5;
@@ -592,7 +513,6 @@ button:disabled {
 }
 
 /* DREAMS & FUTURE */
-
 #tile11,
 #tile15 {
     background: #DCE3FF;
@@ -631,37 +551,28 @@ button:disabled {
 .board-center {
     grid-row: 2 / 5;
     grid-column: 2 / 5;
-
     position: relative;
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     gap: 14px;
     padding: 18px;
-
     background:
         radial-gradient(circle at top right, rgba(220, 235, 255, 0.6), transparent 45%),
         linear-gradient(145deg, #ffffff, #f8fbff);
-
     border: 3px dashed #b9cfee;
     border-radius: 24px;
-
     box-shadow: inset 0 0 25px rgba(190, 213, 243, 0.16);
 }
 
 .board-center::before,
 .board-center::after {
     content: "♡";
-
     position: absolute;
-
     color: #e6b8d0;
     font-size: 24px;
-
     opacity: 0.65;
     pointer-events: none;
 }
@@ -681,10 +592,8 @@ button:disabled {
 .board-center h2 {
     font-family: 'Fredoka', sans-serif;
     font-size: clamp(20px, 4vw, 32px);
-
     color: #718fc4;
     text-shadow: 2px 2px 0 white;
-
     letter-spacing: 0.5px;
 }
 
@@ -704,33 +613,24 @@ button:disabled {
     width: 90px;
     height: 90px;
     padding: 13px;
-
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-
     gap: 5px;
-
     background: linear-gradient(145deg, #a9ccf5, #c7baf3);
-
     border: 4px solid white;
     border-radius: 23px;
-
     box-shadow:
         0 8px 0 #91acd8,
         0 12px 20px rgba(105, 145, 195, 0.2);
-
     transition: transform 0.2s ease;
 }
 
 .dice-dot {
     width: 100%;
     height: 100%;
-
     border-radius: 50%;
     background: transparent;
-
     display: block;
 }
 
@@ -754,7 +654,6 @@ button:disabled {
 #rollButton {
     margin: 0;
     padding: 12px 22px;
-
     font-size: 13px;
     letter-spacing: 0.2px;
 }
@@ -778,12 +677,9 @@ button:disabled {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     gap: 8px;
-
     font-size: 12px;
     font-weight: 700;
-
     color: #7185ad;
     text-align: center;
 }
@@ -812,9 +708,7 @@ button:disabled {
 #endPage {
     max-width: 650px;
     width: 90%;
-
     padding: 50px 30px;
-
     text-align: center;
 }
 
@@ -831,22 +725,17 @@ button:disabled {
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 15px;
     margin: 30px auto;
 }
 
 .end-pawn {
     display: block;
-
     width: 115px;
     height: 135px;
-
     object-fit: contain;
     object-position: center;
-
     filter: drop-shadow(0 6px 6px rgba(90, 110, 150, 0.13));
-
     animation: endPawnFloat 2.5s ease-in-out infinite;
 }
 
@@ -867,13 +756,10 @@ button:disabled {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
     gap: 12px;
     margin: 30px 0;
-
     font-family: 'Fredoka', sans-serif;
     font-size: clamp(22px, 5vw, 32px);
-
     color: #718fc4;
 }
 
@@ -888,25 +774,19 @@ button:disabled {
 .end-message-card {
     max-width: 480px;
     min-height: 130px;
-
     margin: 25px auto;
     padding: 30px 25px;
-
     background: linear-gradient(135deg, #fff5fa, #eaf2ff);
-
     border: 3px solid white;
     border-radius: 28px;
-
     box-shadow: 0 8px 0 #d7e5f7;
 }
 
 #endMessage {
     color: #657da4;
-
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     font-weight: 600;
-
     line-height: 1.9;
     text-align: center;
 }
@@ -916,7 +796,6 @@ button:disabled {
 #playAgainButton {
     margin-top: 25px;
     padding: 16px 40px;
-
     background: #e99cbd;
     box-shadow: 0 6px 0 #d47fa5;
 }
@@ -1130,9 +1009,7 @@ button:disabled {
     .game-board {
         gap: 4px;
         padding: 6px;
-
         grid-template-rows: repeat(5, minmax(65px, auto));
-
         border-radius: 18px;
     }
 
@@ -1166,10 +1043,8 @@ button:disabled {
         height: 60px;
         padding: 9px;
         gap: 3px;
-
         border-radius: 16px;
         border-width: 3px;
-
         box-shadow:
             0 5px 0 #91acd8,
             0 8px 12px rgba(105, 145, 195, 0.2);
@@ -1291,7 +1166,6 @@ button:disabled {
     .game-board {
         gap: 3px;
         padding: 4px;
-
         grid-template-rows: repeat(5, minmax(55px, auto));
     }
 

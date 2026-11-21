@@ -101,14 +101,14 @@ const questions = {
     ],
 
     love: [
-        "Apa arti hubungan yang sehat menurut kamu?",
-        "Hal apa yang bikin kamu merasa disayang?",
-        "Bagaimana cara terbaik kita menyelesaikan perbedaan pendapat?",
-        "Menurut kamu, seberapa penting komunikasi dalam hubungan?",
-        "Apa bentuk perhatian sederhana yang paling kamu suka?",
-        "Apa yang bisa kita lakukan supaya tetap dekat meskipun sibuk?",
-        "Apa hal yang ingin kamu pelajari bersama dalam hubungan ini?",
-        "Menurut kamu, bagaimana cara menjaga rasa nyaman satu sama lain?"
+        "Kapan terakhir kali kamu merasa sendirian padahal sedang sama aku?",
+        "Apa yang biasanya kamu pendam karena takut sama reaksiku kalau kamu jujur?",
+        "Dalam kondisi seperti apa kamu paling membutuhkan aku, tapi justru merasa aku nggak ada buat kamu?",
+        "Ada nggak bagian dari dirimu yang merasa harus berubah supaya bisa diterima sama aku?",
+        "Apa bentuk perhatian kecil dariku yang sebenarnya paling berarti buat kamu?",
+        "Kalau kamu bisa mengubah satu hal dari cara kita memperlakukan satu sama lain, apa yang ingin kamu ubah?",
+        "Pernah nggak kamu merasa kurang dimengerti sama aku? Kalau pernah, hal apa yang sebenarnya ingin kamu pahami?",
+        "Apa yang bisa kita lakukan supaya masing-masing tetap merasa aman, dihargai, dan bebas jadi diri sendiri dalam hubungan ini?"
     ],
 
     friendship: [
@@ -142,6 +142,17 @@ const questions = {
         "Kalau punya mesin waktu, kamu mau pergi ke masa lalu atau masa depan?",
         "Kalau bisa memelihara hewan apa pun, kamu mau punya apa?",
         "Kalau tiba-tiba dapat liburan gratis, kamu mau ke mana?"
+    ],
+
+    dare: [
+        "Tatap mata pasanganmu selama 10 detik tanpa tertawa.",
+        "Sebutkan tiga hal yang kamu suka dari pasanganmu.",
+        "Tirukan gaya pasanganmu saat sedang ngambek.",
+        "Nyanyikan sedikit lagu yang mengingatkan kamu sama pasanganmu.",
+        "Buat satu kalimat gombal spontan untuk pasanganmu.",
+        "Ceritakan satu momen bersama pasanganmu yang bikin kamu senyum-senyum sendiri.",
+        "Berikan satu pujian tulus yang belum pernah kamu sampaikan sebelumnya.",
+        "Buat pose foto paling lucu bersama pasanganmu."
     ]
 
 };
@@ -158,7 +169,8 @@ const categoryNames = {
     love: "Love & Relationship",
     friendship: "Friendship",
     future: "Dreams & Future",
-    random: "Random"
+    random: "Random",
+    dare: "Dare"
 };
 
 
@@ -180,7 +192,7 @@ const tileCategories = [
     "memories",
     "future",
     "about",
-    "random",
+    "dare",
     "friendship",
     "future"
 ];
@@ -199,14 +211,14 @@ const tileLabels = [
     "Past Memories",
     "Dreams & Future",
     "About Us",
-    "Random",
+    "Dare",
     "Friendship",
     "Dreams & Future"
 ];
 
 
 // ==========================================
-// STYLE TAMBAHAN UNTUK FITUR BARU
+// STYLE TAMBAHAN
 // ==========================================
 
 function addExtraStyles() {
@@ -280,10 +292,125 @@ function addExtraStyles() {
             }
         }
 
+        /* DARE SURPRISE */
+
+        .dare-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 20000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(18, 29, 55, 0.48);
+            backdrop-filter: blur(5px);
+            animation: dareOverlayIn 0.3s ease forwards;
+        }
+
+        .dare-card {
+            position: relative;
+            padding: 35px 45px;
+            max-width: 85%;
+            text-align: center;
+            background: linear-gradient(145deg, #eef5ff, #fceaf3);
+            border: 3px solid white;
+            border-radius: 25px;
+            box-shadow: 0 12px 35px rgba(35, 55, 95, 0.25);
+            animation: dareCardPop 0.65s cubic-bezier(.2, 1.5, .5, 1) forwards;
+        }
+
+        .dare-card h2 {
+            margin: 0;
+            color: #657cb4;
+            font-size: clamp(25px, 5vw, 42px);
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .dare-card p {
+            margin: 12px 0 0;
+            color: #b87596;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .dare-sparkle {
+            position: absolute;
+            font-size: 25px;
+            pointer-events: none;
+            animation: dareSparkle 1.1s ease-out forwards;
+        }
+
+        .dare-sparkle:nth-child(1) {
+            top: -22px;
+            left: -18px;
+        }
+
+        .dare-sparkle:nth-child(2) {
+            top: -25px;
+            right: -15px;
+            animation-delay: 0.1s;
+        }
+
+        .dare-sparkle:nth-child(3) {
+            bottom: -20px;
+            left: 10px;
+            animation-delay: 0.2s;
+        }
+
+        .dare-sparkle:nth-child(4) {
+            bottom: -20px;
+            right: 10px;
+            animation-delay: 0.15s;
+        }
+
+        @keyframes dareOverlayIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes dareCardPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.4) rotate(-8deg);
+            }
+            65% {
+                opacity: 1;
+                transform: scale(1.12) rotate(3deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0);
+            }
+        }
+
+        @keyframes dareSparkle {
+            0% {
+                opacity: 0;
+                transform: scale(0.2) rotate(0);
+            }
+            40% {
+                opacity: 1;
+                transform: scale(1.4) rotate(90deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.5) rotate(180deg);
+            }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .floating-heart,
-            .game-confetti {
+            .game-confetti,
+            .dare-overlay,
+            .dare-card,
+            .dare-sparkle {
                 animation-duration: 0.01ms !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dare-card {
+                padding: 28px 25px;
             }
         }
 
@@ -294,6 +421,56 @@ function addExtraStyles() {
 }
 
 addExtraStyles();
+
+
+// ==========================================
+// ANIMASI DARE SURPRISE
+// ==========================================
+
+async function showDareSurprise() {
+
+    const overlay = document.createElement("div");
+    overlay.className = "dare-overlay";
+
+    const card = document.createElement("div");
+    card.className = "dare-card";
+
+    const title = document.createElement("h2");
+    title.textContent = "YOU GOT A DARE!";
+
+    const subtitle = document.createElement("p");
+    subtitle.textContent = "ready for a little challenge? ♡";
+
+    const sparkles = ["✨", "⭐", "💫", "✨"];
+
+    sparkles.forEach(symbol => {
+
+        const sparkle = document.createElement("span");
+        sparkle.className = "dare-sparkle";
+        sparkle.textContent = symbol;
+
+        card.appendChild(sparkle);
+
+    });
+
+    card.appendChild(title);
+    card.appendChild(subtitle);
+    overlay.appendChild(card);
+
+    document.body.appendChild(overlay);
+
+    playSound(784, 0.18, 0.07, "sine");
+
+    await wait(1500);
+
+    overlay.style.transition = "opacity 0.3s ease";
+    overlay.style.opacity = "0";
+
+    await wait(300);
+
+    overlay.remove();
+
+}
 
 
 // ==========================================
@@ -395,19 +572,14 @@ function playSound(frequency, duration, volume = 0.08, type = "sine") {
 }
 
 
-// Suara dadu
 function playDiceSound() {
-
     playSound(650, 0.08, 0.045, "square");
-
 }
 
 
-// Suara pion berjalan
 function playPawnSound() {
 
     const notes = [880, 1175];
-
     const frequency = notes[pawnSoundStep % notes.length];
 
     playSound(frequency, 0.16, 0.065, "sine");
@@ -417,7 +589,6 @@ function playPawnSound() {
 }
 
 
-// Suara skip
 function playSkipSound() {
 
     playSound(600, 0.10, 0.055, "sine");
@@ -429,7 +600,6 @@ function playSkipSound() {
 }
 
 
-// Suara kemenangan
 function playWinSound() {
 
     const victoryNotes = [
@@ -463,7 +633,6 @@ function showFloatingHearts(tileNumber) {
     if (!tile) return;
 
     const rect = tile.getBoundingClientRect();
-
     const hearts = ["♡", "♥", "💕", "💗", "✨"];
 
     for (let i = 0; i < 5; i++) {
@@ -721,7 +890,6 @@ function renderBoard() {
         }
 
         const label = document.createElement("span");
-
         label.textContent = tileLabels[i];
 
         const pawnContainer = document.createElement("span");
@@ -855,7 +1023,6 @@ async function typeMessage(element, message, speed = 35) {
 
 function initializeGame() {
 
-    // ACAK PEMAIN PERTAMA SETIAP GAME DIMULAI
     currentPlayer = Math.random() < 0.5 ? 1 : 2;
 
     currentCategory = "";
@@ -1008,7 +1175,6 @@ rollButton.addEventListener("click", async function() {
 
         }
 
-        // HASIL DADU
         const diceNumber = Math.floor(Math.random() * 6) + 1;
 
         renderDiceFace(diceNumber);
@@ -1022,8 +1188,6 @@ rollButton.addEventListener("click", async function() {
 
         diceDisplay.classList.remove("dice-result-pop");
 
-
-        // MENJALANKAN PION
         diceResult.textContent = "Moving your pawn... ♡";
 
         for (let step = 0; step < diceNumber; step++) {
@@ -1039,8 +1203,8 @@ rollButton.addEventListener("click", async function() {
 
         }
 
-
         // MENENTUKAN PETAK
+
         const landedTile = playerPositions[currentPlayer];
 
         await animateLandingTile(landedTile);
@@ -1063,8 +1227,8 @@ rollButton.addEventListener("click", async function() {
 
         }
 
-
         // MENAMPILKAN PERTANYAAN
+
         currentCategory = category;
 
         document.getElementById("questionCategory").textContent =
@@ -1082,6 +1246,14 @@ rollButton.addEventListener("click", async function() {
 
         nextQuestionButton.textContent = "Finish Question ♡";
         backButton.textContent = "Skip Question ♡";
+
+        // ANIMASI KHUSUS JIKA MENDAPAT DARE
+
+        if (currentCategory === "dare") {
+
+            await showDareSurprise();
+
+        }
 
         await wait(500);
 
